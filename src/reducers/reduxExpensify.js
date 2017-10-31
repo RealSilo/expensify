@@ -1,26 +1,11 @@
-import { createStore, combineReducers } from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+const Info = (props) => (
+  <div>
+    <h1>info</h1>
+    <p>{props.info}</p>
+  </div>
+)
 
-
-store.subscribe(() => {
-  const state = store.getState();
-  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-});
-
-store.dispatch(addExpense({description: 'Rent', amount: 100 }));
-
-const demoState = {
-  expenses: [{
-    id: 'haha',
-    description: 'rent',
-    note: 'January',
-    amount: 44333,
-    createdAt: 0
-  }],
-  filters: {
-    text: 'rent',
-    sortBy: 'amount',
-    startDate: undefined,
-    endDate: undefined
-  }
-};
+ReactDOM.render(<Info info='details' />, document.getElementById('app'));
